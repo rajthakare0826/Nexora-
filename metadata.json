@@ -1,0 +1,9 @@
+{
+  "name": "Nexora AI",
+  "description": "AI-Powered Career Intelligence Platform with AI Resume Maker & Generator (Fresher, Experienced & Switcher sequences), ATS Scanner, custom roadmaps, live IT company interview simulation, and learning resource hub.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

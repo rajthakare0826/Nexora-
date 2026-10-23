@@ -1,0 +1,22 @@
+{
+  "short_name": "Nexora AI",
+  "name": "Nexora AI - Career Intelligence Platform",
+  "description": "AI-Powered Career Intelligence Platform. An AI-powered career assistant with chat, resume analysis, custom roadmaps, interview preparation, and learning resource hub.",
+  "icons": [
+    {
+      "src": "/src/assets/images/favicon_dark.jpg",
+      "type": "image/jpeg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/src/assets/images/favicon_light.jpg",
+      "type": "image/jpeg",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#030712",
+  "theme_color": "#4F46E5",
+  "display": "standalone",
+  "orientation": "portrait"
+}

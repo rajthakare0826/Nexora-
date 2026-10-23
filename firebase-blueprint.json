@@ -1,0 +1,126 @@
+{
+  "entities": {
+    "user_chat": {
+      "title": "User Chat Message",
+      "description": "A single chat message saved for history",
+      "type": "object",
+      "properties": {
+        "role": { "type": "string" },
+        "content": { "type": "string" },
+        "timestamp": { "type": "number" }
+      },
+      "required": ["role", "content", "timestamp"]
+    },
+    "user_resume_analysis": {
+      "title": "User Resume Analysis",
+      "description": "ATS scoring and resume audit report",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "timestamp": { "type": "number" },
+        "targetRole": { "type": "string" },
+        "fileName": { "type": "string" },
+        "atsScore": { "type": "number" },
+        "summary": { "type": "string" }
+      },
+      "required": ["userId", "timestamp", "targetRole", "atsScore"]
+    },
+    "user_roadmap": {
+      "title": "User Career Roadmap",
+      "description": "A customized AI career path roadmap",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "timestamp": { "type": "number" },
+        "career": { "type": "string" },
+        "title": { "type": "string" }
+      },
+      "required": ["userId", "timestamp", "career", "title"]
+    },
+    "user_interview": {
+      "title": "User Interview Session",
+      "description": "Mock interview assistant chat and report",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "timestamp": { "type": "number" },
+        "role": { "type": "string" },
+        "isCompleted": { "type": "boolean" }
+      },
+      "required": ["userId", "timestamp", "role", "isCompleted"]
+    },
+    "user_skillgap": {
+      "title": "User Skill Gap",
+      "description": "Skill gap assessment report",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "timestamp": { "type": "number" },
+        "targetCareer": { "type": "string" },
+        "careerReadinessScore": { "type": "number" }
+      },
+      "required": ["userId", "timestamp", "targetCareer", "careerReadinessScore"]
+    },
+    "activity": {
+      "title": "Telemetry Activity Log",
+      "description": "Platform activity record for administrative real-time charts and feed",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "activity": { "type": "string" },
+        "timestamp": { "type": "number" },
+        "status": { "type": "string" },
+        "device": { "type": "string" },
+        "browser": { "type": "string" },
+        "os": { "type": "string" },
+        "details": { "type": "string" }
+      },
+      "required": ["name", "email", "activity", "timestamp", "status", "device", "browser", "os", "details"]
+    },
+    "contact": {
+      "title": "Contact Form Inquiry",
+      "description": "A single contact form inquiry submission",
+      "type": "object",
+      "properties": {
+        "fullName": { "type": "string" },
+        "email": { "type": "string" },
+        "subject": { "type": "string" },
+        "message": { "type": "string" },
+        "createdAt": { "type": "object" },
+        "status": { "type": "string" }
+      },
+      "required": ["fullName", "email", "subject", "message", "createdAt", "status"]
+    }
+  },
+  "firestore": {
+    "contacts/{contactId}": {
+      "schema": "contact",
+      "description": "Contact form submissions"
+    },
+    "users/{userId}/chats/{chatId}": {
+      "schema": "user_chat",
+      "description": "User career chat session history"
+    },
+    "users/{userId}/resume_analyses/{analysisId}": {
+      "schema": "user_resume_analysis",
+      "description": "User resume analysis reports"
+    },
+    "users/{userId}/roadmaps/{roadmapId}": {
+      "schema": "user_roadmap",
+      "description": "User generated roadmaps"
+    },
+    "users/{userId}/interviews/{interviewId}": {
+      "schema": "user_interview",
+      "description": "User interview sessions"
+    },
+    "users/{userId}/skillgaps/{skillgapId}": {
+      "schema": "user_skillgap",
+      "description": "User skill gap analysis reports"
+    },
+    "activities/{activityId}": {
+      "schema": "activity",
+      "description": "Telemetry activity logs"
+    }
+  }
+}
